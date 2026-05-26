@@ -1,0 +1,17 @@
+# Сгенерированные скриншоты проверки вёрстки
+tests/shots/
+
+# Внутренние рабочие документы (содержат локальные пути)
+PLAN.md
+AUDIT-REPORT.md
+
+# Неиспользуемые на сайте исходники фото (личные, не для публичного репо)
+images/photo_4_*.jpg
+images/photo_5_*.jpg
+images/photo_6_*.jpg
+images/photo_7_*.jpg
+images/photo_8_*.jpg
+images/photo_10_*.jpg
+images/photo_11_*.jpg
+images/photo_12_*.jpg
+images/IMG_2531.PNG

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валерий Петров — спортивный психолог для футболистов | Санкт-Петербург</title>
+    <meta name="description" content="Спортивный психолог Валерий Петров, Санкт-Петербург. 10 лет в Академии «Зенита», 14 лет практики. Помогаю футболистам убрать тревогу, страх ошибки и вернуть фокус на игру. Бесплатный диагностический созвон.">
+    <meta name="theme-color" content="#111215">
+    <link rel="canonical" href="https://valeriypetrov.ru/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:title" content="Валерий Петров — спортивный психолог для футболистов | СПб">
+    <meta property="og:description" content="Помогаю футболистам вернуть голову в игру. 10 лет в Академии «Зенита», 700+ консультаций. Бесплатный диагностический созвон.">
+    <meta property="og:image" content="https://valeriypetrov.ru/images/hero_nike_stadium.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Валерий Петров — спортивный психолог для футболистов | СПб">
+    <meta name="twitter:description" content="Помогаю футболистам вернуть голову в игру. Бесплатный диагностический созвон.">
+    <meta name="twitter:image" content="https://valeriypetrov.ru/images/hero_nike_stadium.png">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23ccff00'/%3E%3Ctext x='50' y='73' font-family='Arial,sans-serif' font-size='64' font-weight='bold' text-anchor='middle' fill='%23111215'%3E%D0%92%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #111215;
+            --bg-2: #16171b;
+            --card: #1b1d22;
+            --card-line: #252830;
+            --lime: #ccff00;
+            --text: #ffffff;
+            --text-muted: #b9bfca;   /* поднят контраст для WCAG AA на тёмных карточках */
+            --text-dim: #9aa1ad;
+            --pad-x: clamp(20px, 6vw, 8%);
+            --pad-y: clamp(56px, 8vw, 100px);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            /* лёгкая глубина вместо плоского фона */
+            background-image:
+                radial-gradient(900px 500px at 85% -5%, rgba(204,255,0,0.06), transparent 60%),
+                radial-gradient(700px 600px at 0% 100%, rgba(204,255,0,0.03), transparent 60%);
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; }
+        :focus-visible { outline: 3px solid var(--lime); outline-offset: 3px; border-radius: 2px; }
+
+        /* ---------- HEADER ---------- */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px var(--pad-x); position: absolute; width: 100%; z-index: 30;
+            background: linear-gradient(180deg, rgba(17,18,21,0.92) 0%, rgba(17,18,21,0) 100%);
+        }
+        .logo {
+            font-family: 'Oswald', sans-serif; font-weight: 700; font-style: italic;
+            text-transform: uppercase; letter-spacing: 1px; font-size: clamp(20px, 2.4vw, 26px);
+            color: #fff; text-decoration: none; white-space: nowrap;
+        }
+        .logo span { color: var(--lime); }
+        nav { display: flex; align-items: center; }
+        nav a {
+            color: #fff; text-decoration: none; margin-left: 32px; font-size: 13px;
+            text-transform: uppercase; font-weight: 700; letter-spacing: 1px; transition: color 0.3s;
+        }
+        nav a:hover { color: var(--lime); }
+        .nav-toggle, .nav-toggle-label { display: none; }
+
+        /* ---------- HERO ---------- */
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 0 var(--pad-x); overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0 0 0 38%; z-index: 0; }
+        .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; filter: saturate(0.92) contrast(1.02); }
+        .hero-bg::after {
+            content: ""; position: absolute; inset: 0;
+            background:
+                linear-gradient(90deg, var(--bg) 18%, rgba(17,18,21,0.55) 55%, rgba(17,18,21,0.15) 100%),
+                linear-gradient(0deg, rgba(17,18,21,0.65), transparent 35%);
+        }
+        .hero-content { max-width: 650px; position: relative; z-index: 2; padding: 120px 0 60px; }
+        .tagline { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--lime); margin-bottom: 20px; font-weight: 700; display: inline-block; }
+        h1 { font-family: 'Oswald', sans-serif; font-size: clamp(34px, 7vw, 64px); line-height: 1.05; font-weight: 700; text-transform: uppercase; font-style: italic; margin-bottom: 25px; color: #fff; }
+        h1 span { color: var(--lime); text-shadow: 0 0 24px rgba(204, 255, 0, 0.25); }
+        .hero-description { font-size: clamp(15px, 2.2vw, 17px); line-height: 1.6; color: var(--text-muted); margin-bottom: 36px; font-weight: 400; max-width: 560px; }
+        .cta-button {
+            display: inline-block; padding: 18px 42px; background-color: var(--lime); color: #000;
+            text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: 1px;
+            text-transform: uppercase; font-style: italic; transform: skewX(-10deg);
+            transition: all 0.3s ease; border: 2px solid var(--lime);
+        }
+        .cta-button > span { display: inline-block; transform: skewX(10deg); }
+        .cta-button:hover { background-color: transparent; color: var(--lime); transform: skewX(-10deg) scale(1.03); box-shadow: 0 0 30px rgba(204, 255, 0, 0.3); }
+        .hero-note { margin-top: 18px; font-size: 13px; color: var(--text-dim); }
+        .hero-note b { color: #fff; }
+
+        /* staggered reveal */
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-content > * { opacity: 0; transform: translateY(18px); animation: rise 0.7s ease forwards; }
+            .hero-content > *:nth-child(1) { animation-delay: 0.05s; }
+            .hero-content > *:nth-child(2) { animation-delay: 0.18s; }
+            .hero-content > *:nth-child(3) { animation-delay: 0.31s; }
+            .hero-content > *:nth-child(4) { animation-delay: 0.44s; }
+            .hero-content > *:nth-child(5) { animation-delay: 0.57s; }
+            @keyframes rise { to { opacity: 1; transform: none; } }
+        }
+
+        /* ---------- STATS ---------- */
+        .stats { display: flex; flex-wrap: wrap; padding: var(--pad-y) var(--pad-x); background-color: var(--bg-2); border-top: 2px solid #202227; gap: 24px; }
+        .stat-item { flex: 1 1 240px; background: var(--card); padding: 30px; border-left: 4px solid var(--lime); }
+        .stat-num { font-family: 'Oswald', sans-serif; font-size: clamp(34px, 5vw, 42px); color: var(--lime); margin-bottom: 5px; font-weight: 700; font-style: italic; }
+        .stat-title { font-size: 15px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; color: #fff; letter-spacing: 0.5px; }
+        .stat-text { font-size: 13.5px; color: var(--text-dim); line-height: 1.5; font-weight: 400; }
+
+        /* ---------- SECTIONS ---------- */
+        .section-title { font-family: 'Oswald', sans-serif; font-size: clamp(26px, 5vw, 38px); margin-bottom: 30px; color: #fff; text-transform: uppercase; font-style: italic; }
+
+        .about-section { padding: var(--pad-y) var(--pad-x); background-color: var(--bg); display: flex; gap: 50px; align-items: stretch; }
+        .about-content { flex: 1 1 56%; }
+        .about-text { font-size: clamp(15px, 2.1vw, 16px); line-height: 1.8; color: var(--text-muted); font-weight: 400; }
+        .green-highlight { color: var(--lime); font-weight: 700; }
+        .about-photo { flex: 0 0 360px; }
+        .about-photo img { width: 100%; height: 100%; border-radius: 4px; border-bottom: 4px solid var(--lime); filter: grayscale(0.12) contrast(1.05); object-fit: cover; object-position: 50% 28%; }
+
+        .work-process-section { padding: var(--pad-y) var(--pad-x); background-color: var(--bg-2); }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .step-item { background: var(--card); padding: 30px; border-left: 3px solid var(--lime); }
+        .step-item p { color: var(--text-muted); line-height: 1.6; font-size: 14.5px; }
+        .step-item strong { color: #fff; font-size: 16px; }
+        .step-num { font-family: 'Oswald', sans-serif; font-size: 32px; color: var(--lime); margin-bottom: 10px; font-style: italic; }
+
+        /* accent band */
+        .accent-band { position: relative; min-height: 320px; background: #000; overflow: hidden; display: flex; align-items: center; padding: var(--pad-y) var(--pad-x); }
+        .accent-band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; filter: brightness(0.45) grayscale(0.35); z-index: 0; }
+        .accent-band::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(17,18,21,0.85), rgba(17,18,21,0.25)); z-index: 1; }
+        .accent-band blockquote { position: relative; z-index: 2; max-width: 640px; font-family: 'Oswald', sans-serif; font-style: italic; font-size: clamp(20px, 3.6vw, 30px); line-height: 1.25; color: #fff; text-transform: uppercase; }
+        .accent-band blockquote span { color: var(--lime); }
+
+        .target-section { padding: var(--pad-y) var(--pad-x) clamp(30px, 4vw, 52px); background-color: var(--bg); }
+        .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .target-card { background: var(--card); padding: 32px; border: 1px solid var(--card-line); }
+        .card-header { display: flex; align-items: center; margin-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 15px; gap: 14px; }
+        .card-header h3 { font-size: 19px; }
+        .card-icon { width: 26px; height: 26px; flex: 0 0 auto; color: var(--lime); }
+        .problems-list { list-style: none; }
+        .problems-list li { font-size: 14px; color: var(--text-muted); margin-bottom: 12px; padding-left: 26px; position: relative; line-height: 1.5; }
+        .problems-list li::before { content: "✓"; position: absolute; left: 0; color: var(--lime); font-weight: 700; }
+
+        .price-section { padding: clamp(30px, 4vw, 52px) var(--pad-x) var(--pad-y); background-color: var(--bg); }
+        .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .price-card { background: var(--bg-2); padding: 34px; border: 1px solid #202227; transition: border-color 0.3s, transform 0.3s; }
+        .price-card:hover { border-color: var(--lime); transform: translateY(-4px); }
+        .price-name { color: var(--lime); font-family: 'Oswald', sans-serif; font-size: 20px; text-transform: uppercase; margin-bottom: 10px; font-style: italic; }
+        .price-value { font-family: 'Oswald', sans-serif; font-size: clamp(28px, 4vw, 32px); color: #fff; margin-bottom: 15px; font-style: italic; }
+        .price-desc { color: var(--text-dim); font-size: 14px; line-height: 1.6; }
+
+        /* ---------- CONTACT ---------- */
+        .contact-section { padding: var(--pad-y) var(--pad-x); background-color: #0b0c0e; text-align: center; border-top: 3px solid var(--lime); }
+        .contact-sub { color: var(--text-muted); margin: -10px auto 32px; max-width: 540px; line-height: 1.6; }
+        .contact-actions { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+        .contact-link {
+            display: inline-flex; align-items: center; gap: 10px; padding: 18px 36px;
+            font-family: 'Oswald', sans-serif; font-size: clamp(18px, 3vw, 22px); color: #000;
+            background: var(--lime); text-decoration: none; font-weight: 700; text-transform: uppercase;
+            border: 2px solid var(--lime); transition: all 0.3s;
+        }
+        .contact-link:hover { background: transparent; color: var(--lime); }
+        .contact-link.secondary { background: transparent; color: var(--lime); }
+        .contact-link.secondary:hover { background: var(--lime); color: #000; }
+        .contact-phone { margin-top: 28px; font-size: 18px; color: #fff; }
+        .contact-phone a { color: var(--lime); text-decoration: none; font-weight: 700; }
+
+        /* ---------- FOOTER ---------- */
+        footer { background: #0b0c0e; padding: 40px var(--pad-x); border-top: 1px solid #202227; display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; align-items: center; color: var(--text-dim); font-size: 13px; }
+        footer .f-name { font-family: 'Oswald', sans-serif; font-style: italic; text-transform: uppercase; color: #fff; font-size: 16px; }
+        footer .f-name span { color: var(--lime); }
+        .social-links { display: flex; gap: 18px; }
+        .social-links a { color: var(--lime); text-decoration: none; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .social-links a.disabled { color: #5a5f68; pointer-events: none; cursor: default; }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 1024px) {
+            .hero-bg { inset: 0 0 0 30%; }
+            .hero-bg::after { background: linear-gradient(90deg, var(--bg) 10%, rgba(17,18,21,0.5) 60%, rgba(17,18,21,0.1) 100%), linear-gradient(0deg, rgba(17,18,21,0.65), transparent 35%); }
+        }
+        @media (max-width: 900px) {
+            .about-section { flex-direction: column; align-items: stretch; }
+            .about-photo { flex: none; max-width: 420px; margin: 0 auto; }
+            .about-photo img { height: 400px; }
+        }
+        @media (max-width: 768px) {
+            /* мобильное меню (CSS-only) */
+            .nav-toggle-label {
+                display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; z-index: 40;
+            }
+            .nav-toggle-label span { width: 26px; height: 3px; background: var(--lime); border-radius: 2px; transition: 0.3s; }
+            nav {
+                position: fixed; inset: 0 0 0 auto; width: min(76vw, 320px); flex-direction: column;
+                align-items: flex-start; justify-content: center; gap: 8px; padding: 40px;
+                background: #0d0e10; transform: translateX(100%); transition: transform 0.3s ease; z-index: 35;
+            }
+            nav a { margin: 0; font-size: 18px; padding: 12px 0; }
+            .nav-toggle:checked ~ nav { transform: translateX(0); }
+            .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) { opacity: 0; }
+            .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+            /* hero: фото фоном на всю ширину, текст поверх */
+            .hero-bg { inset: 0; }
+            .hero-bg::after { background: linear-gradient(180deg, rgba(17,18,21,0.55) 0%, rgba(17,18,21,0.8) 60%, var(--bg) 100%); }
+            .hero-content { padding: 130px 0 60px; }
+
+            .steps-grid, .price-grid, .grid-container { grid-template-columns: 1fr; }
+            .stat-item { flex: 1 1 100%; }
+        }
+        @media (max-width: 480px) {
+            .contact-actions { flex-direction: column; }
+            .contact-link { width: 100%; justify-content: center; }
+            .cta-button { width: 100%; text-align: center; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Валерий Петров — спортивный психолог",
+      "description": "Спортивный психолог для футболистов, родителей, тренеров и профессиональных спортсменов в Санкт-Петербурге.",
+      "areaServed": { "@type": "City", "name": "Санкт-Петербург" },
+      "telephone": "+7-921-886-02-03",
+      "priceRange": "от 6000 ₽",
+      "founder": {
+        "@type": "Person",
+        "name": "Валерий Петров",
+        "jobTitle": "Спортивный психолог",
+        "telephone": "+7-921-886-02-03",
+        "sameAs": ["https://t.me/magicvel"]
+      },
+      "sameAs": ["https://t.me/magicvel"]
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <a href="#top" class="logo">Валерий <span>Петров</span></a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Открыть меню">
+            <span></span><span></span><span></span>
+        </label>
+        <nav aria-label="Основная навигация">
+            <a href="#about">Обо мне</a>
+            <a href="#requests">Запросы</a>
+            <a href="#prices">Цены</a>
+            <a href="#booking">Записаться</a>
+        </nav>
+    </header>
+
+    <main id="top">
+
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="images/hero_nike_stadium.png" width="1080" height="1440"
+                 alt="Валерий Петров, спортивный психолог, в футбольной форме на стадионе" loading="eager">
+        </div>
+        <div class="hero-content">
+            <span class="tagline">Спортивный психолог</span>
+            <h1>Помогаю футболистам <span>вернуть голову в игру</span></h1>
+            <p class="hero-description">Я сам 10 лет играл в Академии «Зенита» — знаю изнутри, что такое тревога перед матчем, скамейка запасных, страх ошибки и давление тренера.</p>
+            <a href="#booking" class="cta-button"><span>Бесплатный диагностический созвон</span></a>
+            <p class="hero-note">Онлайн и очно в Санкт-Петербурге · <b>700+</b> консультаций</p>
+        </div>
+    </section>
+
+    <section class="stats" aria-label="Опыт и результаты">
+        <div class="stat-item"><div class="stat-num">10 лет</div><div class="stat-title">В Академии «Зенита»</div><div class="stat-text">Знаю профессиональный футбол изнутри.</div></div>
+        <div class="stat-item"><div class="stat-num">14 лет</div><div class="stat-title">Практики психологии</div><div class="stat-text">Доверие, конфиденциальность и нацеленность на результат — фундамент моей работы.</div></div>
+        <div class="stat-item"><div class="stat-num">700+</div><div class="stat-title">Консультаций проведено</div><div class="stat-text">Среди клиентов — игроки молодёжной сборной, сборной России, Премьер-лиги и сборной Армении.</div></div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <h2 class="section-title">Обо мне</h2>
+            <div class="about-text">
+                <p><span class="green-highlight">10 лет в Академии «Зенита».</span> Был лидером команды, одним из лучших игроков своего возраста в городе. И при этом я на собственном опыте знаю, что такое оказаться на скамейке запасных, услышать жёсткую критику тренера, бороться с тревогой перед важным матчем.</p>
+                <p style="margin-top: 20px;"><span class="green-highlight">В спорте, особенно в футболе,</span> в первую очередь это тело: навыки, техника, скорость, тактика, понимание процесса, пространственное ощущение. Что немаловажно — это психика, внутренние установки спортсмена, которые или помогают, или мешают развивать его лучшие качества.</p>
+                <p style="margin-top: 20px;"><span class="green-highlight">Мой подход:</span> Я работаю не «по протоколу». Я подбираю метод под конкретного человека и его запрос.</p>
+            </div>
+        </div>
+        <div class="about-photo">
+            <img src="images/IMG_8923.JPG" width="1500" height="2250"
+                 alt="Портрет психолога Валерия Петрова" loading="lazy">
+        </div>
+    </section>
+
+    <section class="work-process-section">
+        <h2 class="section-title">Как проходит работа</h2>
+        <div class="steps-grid">
+            <div class="step-item">
+                <div class="step-num">01</div>
+                <p><strong>Диагностика</strong><br>Бесплатный созвон 15–20 мин. Знакомимся, обсуждаем запрос, определяем стратегию.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-num">02</div>
+                <p><strong>Односессионная терапия</strong><br>Разбираем вашу ситуацию и убеждения. Подбираем эффективные инструменты для решения задачи, проживаем состояние, убираем блоки.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-num">03</div>
+                <p><strong>Результат</strong><br>Возвращаем фокус на игру, убираем страх ошибки. Возвращаем удовольствие от футбола.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="accent-band" aria-label="Принцип работы">
+        <img src="images/photo_9_2026-05-26_23-09-26.jpg" width="853" height="1280"
+             alt="Валерий Петров с футбольным мячом" loading="lazy">
+        <blockquote>Тело тренирует техника.<br>Игру <span>выигрывает голова.</span></blockquote>
+    </section>
+
+    <section class="target-section" id="requests">
+        <h2 class="section-title">С какими запросами ко мне приходят</h2>
+        <div class="grid-container">
+            <div class="target-card">
+                <div class="card-header">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7l4.5 3.3-1.7 5.2H9.2l-1.7-5.2L12 7z"/></svg>
+                    <h3>Юные футболисты</h3>
+                </div>
+                <ul class="problems-list">
+                    <li>Тревога перед важными матчами, страх сильной команды</li>
+                    <li>Скамейка запасных — ощущение «я никчёмный, слабый»</li>
+                    <li>Не умею принимать критику тренера</li>
+                    <li>Жёсткие шутки и буллинг в коллективе, дома не с кем поделиться</li>
+                    <li>Страх бить пенальти или важный штрафной</li>
+                    <li>После пропущенного гола команда опускает руки</li>
+                    <li>Унижение, когда не попал в стартовый состав</li>
+                    <li>Подростковый возраст: первые отношения, алкоголь — мешают игре</li>
+                </ul>
+            </div>
+            <div class="target-card">
+                <div class="card-header">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.2"/><path d="M3 20v-1a5 5 0 0 1 10 0v1M14 20v-.5a4 4 0 0 1 7 0v.5"/></svg>
+                    <h3>Родители</h3>
+                </div>
+                <ul class="problems-list">
+                    <li>Не знаю, как поддержать ребёнка после поражения</li>
+                    <li>Лезу к тренеру со своими советами, потом жалею</li>
+                    <li>«Деспотичный отец» — давлю, ребёнок боится ошибиться</li>
+                    <li>Не слышу обратную связь тренера, борюсь с ним вместо смены команды</li>
+                    <li>Эго мешает трезво оценить уровень своего ребёнка</li>
+                </ul>
+            </div>
+            <div class="target-card">
+                <div class="card-header">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4h12v3a6 6 0 0 1-12 0V4zM6 6H3v1a3 3 0 0 0 3 3M18 6h3v1a3 3 0 0 1-3 3M9 16h6M8 20h8"/></svg>
+                    <h3>Профессионалы</h3>
+                </div>
+                <ul class="problems-list">
+                    <li>Семейные конфликты, измены, проблемы с жёнами и детьми</li>
+                    <li>Не умею распоряжаться большими деньгами, остановился в развитии</li>
+                    <li>Психологическое восстановление после тяжёлой травмы</li>
+                    <li>Иерархия и конфликты в команде, психологические игры</li>
+                    <li>Волнение перед ключевыми соревнованиями</li>
+                    <li>Внутренние конфликты ценностей и убеждений</li>
+                </ul>
+            </div>
+            <div class="target-card">
+                <div class="card-header">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h4"/></svg>
+                    <h3>Тренеры</h3>
+                </div>
+                <ul class="problems-list">
+                    <li>Не хватает психологических и педагогических навыков</li>
+                    <li>Не вижу конфликтов внутри коллектива, не могу их разрешить</li>
+                    <li>Подход «hard, на воле» не работает с новым поколением</li>
+                    <li>Не нахожу индивидуального ключа к каждому игроку</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="price-section" id="prices">
+        <h2 class="section-title">Цены</h2>
+        <div class="price-grid">
+            <div class="price-card">
+                <div class="price-name">Диагностика</div>
+                <div class="price-value">0 ₽</div>
+                <p class="price-desc">15–20 минут. Знакомимся, обсуждаем запрос.</p>
+            </div>
+            <div class="price-card">
+                <div class="price-name">Односессионная терапия</div>
+                <div class="price-value">от 6 000 ₽</div>
+                <p class="price-desc">Разбираем вашу ситуацию и убеждения. Подбираем эффективные инструменты, проживаем состояние, убираем блоки.</p>
+            </div>
+            <div class="price-card">
+                <div class="price-name">Программы и пакеты</div>
+                <div class="price-value">Индивидуально</div>
+                <p class="price-desc">Глубокая работа от 3 часов или ежемесячное сопровождение — долгосрочная программа под ваши задачи.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="booking">
+        <h2 class="section-title">Записаться на созвон</h2>
+        <p class="contact-sub">Первый диагностический звонок — бесплатно. Напишите удобным способом, отвечаю лично.</p>
+        <div class="contact-actions">
+            <a href="https://t.me/magicvel" class="contact-link" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+            <a href="https://max.ru/u/f9LHodD0cOKvx3Q7KQa9OvA47CAKjBoloeSHnLkr4Y9k7xbfsMEIta_zZRo" class="contact-link secondary" target="_blank" rel="noopener noreferrer">Написать в МАКС</a>
+        </div>
+        <div class="contact-phone">
+            <p>Телефон: <a href="tel:+79218860203">+7 921 886-02-03</a> <span style="color:var(--text-dim)">(Telegram, МАКС)</span></p>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <div>
+            <div class="f-name">Валерий <span>Петров</span></div>
+            <div style="margin-top:6px;">Спортивный психолог · Санкт-Петербург</div>
+        </div>
+        <div class="social-links">
+            <a href="https://t.me/magicvel" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <!-- TODO: вставить реальную ссылку VK -->
+            <a href="#" class="disabled" aria-disabled="true" title="Скоро">VKontakte</a>
+            <!-- TODO: вставить реальную ссылку Instagram (Meta, заблокирована в РФ — добавлять опционально) -->
+            <a href="#" class="disabled" aria-disabled="true" title="Скоро">Instagram</a>
+        </div>
+        <div>© <span id="year">2026</span> Валерий Петров</div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Закрытие мобильного меню при клике по ссылке
+        document.querySelectorAll('nav a').forEach(function (a) {
+            a.addEventListener('click', function () {
+                var t = document.getElementById('nav-toggle');
+                if (t) t.checked = false;
+            });
+        });
+    </script>
+
+</body>
+</html>
