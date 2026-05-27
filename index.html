@@ -1,1 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Валерий Петров — спортивный психолог</title>
 
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#111;
+color:white;
+line-height:1.6;
+}
+
+section{
+padding:60px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.hero{
+height:100vh;
+background:url('images/hero_nike_stadium.png') center/cover no-repeat;
+display:flex;
+align-items:center;
+}
+
+.overlay{
+background:rgba(0,0,0,0.65);
+padding:40px;
+max-width:700px;
+}
+
+h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.green{
+color:#ccff00;
+}
+
+.btn{
+display:inline-block;
+padding:16px 30px;
+background:#ccff00;
+color:black;
+text-decoration:none;
+font-weight:bold;
+margin-top:20px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1b1b1b;
+padding:30px;
+border-left:4px solid #ccff00;
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 400px;
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+}
+
+.edu{
+background:#181818;
+border:1px solid #333;
+padding:30px;
+margin-top:30px;
+}
+
+.edu h3{
+color:#ccff00;
+margin-bottom:20px;
+}
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+display:inline-block;
+margin:10px;
+padding:16px 30px;
+background:#ccff00;
+color:black;
+text-decoration:none;
+font-weight:bold;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:40px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<div class="overlay">
+<p class="green">Спортивный психолог</p>
+
+<h1>
+Помогаю футболистам
+<span class="green">вернуть голову в игру</span>
+</h1>
+
+<p>
+10 лет в Академии «Зенита».
+14 лет практики.
+700+ консультаций.
+</p>
+
+<a href="#contact" class="btn">
+Записаться
+</a>
+</div>
+</section>
+
+<section>
+<div class="stats">
+
+<div class="card">
+<h2 class="green">10 лет</h2>
+<p>В Академии «Зенита»</p>
+</div>
+
+<div class="card">
+<h2 class="green">14 лет</h2>
+<p>Практики психологии</p>
+</div>
+
+<div class="card">
+<h2 class="green">700+</h2>
+<p>Консультаций проведено</p>
+</div>
+
+</div>
+</section>
+
+<section class="about">
+
+<div>
+
+<h2>Обо мне</h2>
+
+<p>
+10 лет в Академии «Зенита».
+Был лидером команды и знаю изнутри,
+что такое тревога, давление и страх ошибки.
+</p>
+
+<p>
+Я работаю не по шаблону.
+Подбираю подход под конкретного спортсмена,
+его психику и ситуацию.
+</p>
+
+<div class="edu">
+
+<h3>Образование и квалификация</h3>
+
+<p>
+— Московский институт психоанализа
+</p>
+
+<p>
+— Спортивная психология
+</p>
+
+<p>
+— 14 лет практики
+</p>
+
+<p>
+— Более 700 консультаций
+</p>
+
+</div>
+
+</div>
+
+<div>
+<img src="images/IMG_8923.JPG">
+</div>
+
+</section>
+
+<section>
+
+<h2>С какими запросами работаю</h2>
+
+<div class="stats">
+
+<div class="card">
+<h3>Юные футболисты</h3>
+<p>
+Тревога, страх ошибки,
+скамейка запасных,
+буллинг, давление тренера.
+</p>
+</div>
+
+<div class="card">
+<h3>Родители</h3>
+<p>
+Как поддержать ребёнка,
+не давить,
+не разрушать мотивацию.
+</p>
+</div>
+
+<div class="card">
+<h3>Профессионалы</h3>
+<p>
+Травмы, конфликты,
+волнение перед матчами,
+потеря уверенности.
+</p>
+</div>
+
+<div class="card">
+<h3>Тренеры</h3>
+<p>
+Конфликты внутри команды,
+психология коллектива,
+подход к игрокам.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Записаться</h2>
+
+<p>
+Первый диагностический звонок бесплатно
+</p>
+
+<a href="https://t.me/magicvel">
+Telegram
+</a>
+
+<a href="tel:+79218860203">
+Позвонить
+</a>
+
+</section>
+
+</body>
+</html>
