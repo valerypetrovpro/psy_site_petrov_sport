@@ -1,40 +1,57 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Валерий Петров — спортивный психолог для футболистов | Санкт-Петербург</title>
-    <meta name="description" content="Спортивный психолог Валерий Петров, Санкт-Петербург. 10 лет в Академии «Зенита», 14 лет практики. Помогаю футболистам убрать тревогу, страх ошибки и вернуть фокус на игру. Бесплатный диагностический созвон.">
-    <meta name="theme-color" content="#111215">
-    <link rel="canonical" href="https://petrov-sport.ru/">
+<style>
+.education-section {
+    padding: var(--pad-y) var(--pad-x);
+    background-color: var(--bg-2);
+}
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="ru_RU">
-    <meta property="og:title" content="Валерий Петров — спортивный психолог для футболистов | СПб">
-    <meta property="og:description" content="Помогаю футболистам вернуть голову в игру. 10 лет в Академии «Зенита», 700+ консультаций. Бесплатный диагностический созвон.">
-    <meta property="og:image" content="https://petrov-sport.ru/images/hero_nike_stadium.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Валерий Петров — спортивный психолог для футболистов | СПб">
-    <meta name="twitter:description" content="Помогаю футболистам вернуть голову в игру. Бесплатный диагностический созвон.">
-    <meta name="twitter:image" content="https://petrov-sport.ru/images/hero_nike_stadium.png">
+.education-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23ccff00'/%3E%3Ctext x='50' y='73' font-family='Arial,sans-serif' font-size='64' font-weight='bold' text-anchor='middle' fill='%23111215'%3E%D0%92%3C/text%3E%3C/svg%3E">
+.education-card {
+    background: var(--card);
+    border-left: 4px solid var(--lime);
+    padding: 36px;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+.education-list {
+    list-style: none;
+}
 
-    <style>
-        :root {
-            --bg: #111215;
-            --bg-2: #16171b;
-            --card: #1b1d22;
-            --card-line: #252830;
-            --lime: #ccff00;
-            --text: #ffffff;
-            --text-muted: #b9bfca;   /* поднят контраст для WCAG AA на тёмных карточках */
-            --text-dim: #9aa1ad;
+.education-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 18px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.education-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--lime);
+    font-weight: 700;
+}
+</style>
+
+<section class="education-section">
+    <div class="education-wrapper">
+        <h2 class="section-title">Образование и квалификация</h2>
+
+        <div class="education-card">
+            <ul class="education-list">
+                <li>Базовое психологическое образование</li>
+                <li>Российский Футбольный Союз (РФС) — спортивный психолог по футболу, продвинутый уровень</li>
+                <li>Психолог-консультант (повышение квалификации)</li>
+                <li>IFS-терапия — Internal Family Systems (терапия внутренних семейных систем)</li>
+                <li>Национальная ассоциация специалистов по психосоматике — сертификат</li>
+            </ul>
+        </div>
+    </div>
+</section>            --text-dim: #9aa1ad;
             --pad-x: clamp(20px, 6vw, 8%);
             --pad-y: clamp(56px, 8vw, 100px);
         }
