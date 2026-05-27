@@ -1,40 +1,579 @@
-<style>
-.education-section {
-    padding: var(--pad-y) var(--pad-x);
-    background-color: var(--bg-2);
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валерий Петров — спортивный психолог для футболистов | Санкт-Петербург</title>
 
-.education-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 
-.education-card {
-    background: var(--card);
-    border-left: 4px solid var(--lime);
-    padding: 36px;
-}
+    <style>
+        :root {
+            --bg: #111215;
+            --bg-2: #16171b;
+            --card: #1b1d22;
+            --card-line: #252830;
+            --lime: #ccff00;
+            --text: #ffffff;
+            --text-muted: #b9bfca;
+            --text-dim: #9aa1ad;
+            --pad-x: clamp(20px, 6vw, 8%);
+            --pad-y: clamp(56px, 8vw, 100px);
+        }
 
-.education-list {
-    list-style: none;
-}
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-.education-list li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 18px;
-    color: var(--text-muted);
-    line-height: 1.7;
-    font-size: 15px;
-}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
 
-.education-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--lime);
-    font-weight: 700;
-}
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px var(--pad-x);
+            position: absolute;
+            width: 100%;
+            z-index: 20;
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            font-style: italic;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--lime);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 var(--pad-x);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(17,18,21,0.95) 20%, rgba(17,18,21,0.45) 65%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+        }
+
+        .tagline {
+            color: var(--lime);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(38px, 7vw, 70px);
+            line-height: 1.05;
+            text-transform: uppercase;
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+
+        h1 span {
+            color: var(--lime);
+        }
+
+        .hero-description {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 34px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--lime);
+            color: black;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 24px;
+            padding: var(--pad-y) var(--pad-x);
+            background: var(--bg-2);
+        }
+
+        .stat-item {
+            background: var(--card);
+            padding: 30px;
+            border-left: 4px solid var(--lime);
+        }
+
+        .stat-num {
+            font-family: 'Oswald', sans-serif;
+            font-size: 42px;
+            color: var(--lime);
+            margin-bottom: 10px;
+        }
+
+        .stat-title {
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .stat-text {
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 42px;
+            text-transform: uppercase;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .about-section {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            padding: var(--pad-y) var(--pad-x);
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-text {
+            color: var(--text-muted);
+            line-height: 1.9;
+            font-size: 16px;
+        }
+
+        .about-photo {
+            flex: 0 0 400px;
+        }
+
+        .about-photo img {
+            border-bottom: 4px solid var(--lime);
+        }
+
+        .green-highlight {
+            color: var(--lime);
+            font-weight: 700;
+        }
+
+        .education-section {
+            padding: 0 var(--pad-x) var(--pad-y);
+        }
+
+        .education-box {
+            background: var(--card);
+            border: 1px solid var(--card-line);
+            padding: 40px;
+        }
+
+        .education-box p {
+            color: var(--text-muted);
+            line-height: 1.9;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .work-process-section {
+            padding: var(--pad-y) var(--pad-x);
+            background: var(--bg-2);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .step-item {
+            background: var(--card);
+            padding: 30px;
+            border-left: 3px solid var(--lime);
+        }
+
+        .step-num {
+            font-size: 34px;
+            color: var(--lime);
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .accent-band {
+            position: relative;
+            min-height: 340px;
+            display: flex;
+            align-items: center;
+            padding: var(--pad-y) var(--pad-x);
+        }
+
+        .accent-band img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.45);
+        }
+
+        .accent-band::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+        }
+
+        .accent-band blockquote {
+            position: relative;
+            z-index: 2;
+            font-family: 'Oswald', sans-serif;
+            font-size: 40px;
+            text-transform: uppercase;
+            max-width: 700px;
+        }
+
+        .accent-band span {
+            color: var(--lime);
+        }
+
+        .contact-section {
+            padding: var(--pad-y) var(--pad-x);
+            text-align: center;
+            background: #0b0c0e;
+            border-top: 3px solid var(--lime);
+        }
+
+        .contact-link {
+            display: inline-block;
+            background: var(--lime);
+            color: black;
+            padding: 18px 36px;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 10px;
+        }
+
+        footer {
+            padding: 40px var(--pad-x);
+            background: #0b0c0e;
+            color: var(--text-dim);
+        }
+
+        @media(max-width:900px) {
+
+            .stats,
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-section {
+                flex-direction: column;
+            }
+
+            .about-photo {
+                width: 100%;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="#" class="logo">Валерий <span>Петров</span></a>
+
+    <nav>
+        <a href="#about">Обо мне</a>
+        <a href="#education">Квалификация</a>
+        <a href="#booking">Запись</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <div class="hero-bg">
+        <img src="images/hero_nike_stadium.png">
+    </div>
+
+    <div class="hero-content">
+
+        <span class="tagline">Спортивный психолог</span>
+
+        <h1>
+            Помогаю футболистам
+            <span>вернуть голову в игру</span>
+        </h1>
+
+        <p class="hero-description">
+            Я сам 10 лет играл в Академии «Зенита» —
+            знаю изнутри, что такое тревога перед матчем,
+            страх ошибки, давление и потеря уверенности.
+        </p>
+
+        <a href="#booking" class="cta-button">
+            Бесплатный диагностический созвон
+        </a>
+
+    </div>
+
+</section>
+
+<section class="stats">
+
+    <div class="stat-item">
+        <div class="stat-num">10 лет</div>
+        <div class="stat-title">Академия «Зенита»</div>
+        <div class="stat-text">
+            Понимаю профессиональный футбол изнутри.
+        </div>
+    </div>
+
+    <div class="stat-item">
+        <div class="stat-num">14 лет</div>
+        <div class="stat-title">Практики</div>
+        <div class="stat-text">
+            Работа со спортсменами и командами.
+        </div>
+    </div>
+
+    <div class="stat-item">
+        <div class="stat-num">700+</div>
+        <div class="stat-title">Консультаций</div>
+        <div class="stat-text">
+            Игроки молодёжных сборных и Премьер-лиги.
+        </div>
+    </div>
+
+</section>
+
+<section class="about-section" id="about">
+
+    <div class="about-content">
+
+        <h2 class="section-title">Обо мне</h2>
+
+        <div class="about-text">
+
+            <p>
+                <span class="green-highlight">10 лет в Академии «Зенита».</span>
+                Я знаю, как выглядит давление изнутри:
+                конкуренция, страх ошибки,
+                тревога перед матчами,
+                критика тренеров и борьба за место в составе.
+            </p>
+
+            <p style="margin-top:20px;">
+                В спорте решает не только тело.
+                Огромую роль играет психика:
+                внутренние установки,
+                уверенность,
+                устойчивость и способность
+                справляться с давлением.
+            </p>
+
+            <p style="margin-top:20px;">
+                Мой подход —
+                индивидуальная работа под конкретного человека
+                и его ситуацию.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="about-photo">
+        <img src="images/IMG_8923.JPG">
+    </div>
+
+</section>
+
+<section class="education-section" id="education">
+
+    <div class="education-box">
+
+        <h2 class="section-title">
+            Образование и квалификация
+        </h2>
+
+        <p>
+            <span class="green-highlight">
+                Высшее психологическое образование.
+            </span>
+            Подготовка в области спортивной психологии,
+            психологии личности и работы
+            с эмоциональными состояниями спортсменов.
+        </p>
+
+        <p>
+            <span class="green-highlight">
+                14 лет практики.
+            </span>
+            Работаю с футболистами,
+            профессиональными спортсменами,
+            родителями и тренерами.
+        </p>
+
+        <p>
+            <span class="green-highlight">
+                Специализация:
+            </span>
+            тревога перед матчами,
+            страх ошибки,
+            потеря уверенности,
+            внутренние конфликты,
+            психологическая устойчивость
+            и возвращение фокуса на игру.
+        </p>
+
+        <p>
+            <span class="green-highlight">
+                Личный спортивный опыт.
+            </span>
+            10 лет в Академии «Зенита»
+            позволяют понимать спортсмена
+            не только как психологу,
+            но и как человеку,
+            который сам проходил через давление,
+            конкуренцию и высокий уровень требований.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="work-process-section">
+
+    <h2 class="section-title">
+        Как проходит работа
+    </h2>
+
+    <div class="steps-grid">
+
+        <div class="step-item">
+            <div class="step-num">01</div>
+            <p>
+                <strong>Диагностика</strong><br><br>
+                Бесплатный созвон 15–20 минут.
+                Разбираем запрос и стратегию работы.
+            </p>
+        </div>
+
+        <div class="step-item">
+            <div class="step-num">02</div>
+            <p>
+                <strong>Работа</strong><br><br>
+                Убираем внутренние блоки,
+                страх ошибки,
+                тревогу и давление.
+            </p>
+        </div>
+
+        <div class="step-item">
+            <div class="step-num">03</div>
+            <p>
+                <strong>Результат</strong><br><br>
+                Возвращаем уверенность,
+                фокус и удовольствие от игры.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="accent-band">
+
+    <img src="images/photo_9_2026-05-26_23-09-26.jpg">
+
+    <blockquote>
+        Тело тренирует техника.<br>
+        Игру <span>выигрывает голова.</span>
+    </blockquote>
+
+</section>
+
+<section class="contact-section" id="booking">
+
+    <h2 class="section-title">
+        Записаться на созвон
+    </h2>
+
+    <a href="https://t.me/magicvel" class="contact-link">
+        Telegram
+    </a>
+
+    <a href="https://max.ru/u/f9LHodD0cOKvx3Q7KQa9OvA47CAKjBoloeSHnLkr4Y9k7xbfsMEIta_zZRo"
+       class="contact-link">
+        МАКС
+    </a>
+
+</section>
+
+<footer>
+
+    © 2026 Валерий Петров
+
+</footer>
+
+</body>
+</html>}
 </style>
 
 <section class="education-section">
